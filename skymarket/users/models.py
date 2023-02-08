@@ -47,7 +47,6 @@ class User(AbstractBaseUser):
     phone = PhoneNumberField(
         verbose_name="Телефон",
         help_text="Введите телефон",
-
     )
 
     role = models.CharField(
