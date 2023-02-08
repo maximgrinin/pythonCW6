@@ -29,13 +29,13 @@ class User(AbstractBaseUser):
     first_name = models.CharField(
         max_length=100,
         verbose_name="Имя",
-        help_text="Введите имя (максимально 100 символов)",
+        help_text="Введите имя",
     )
 
     last_name = models.CharField(
         max_length=100,
         verbose_name="Фамилия",
-        help_text="Введите фамилию (максимально 100 символов)",
+        help_text="Введите фамилию",
     )
 
     email = models.EmailField(

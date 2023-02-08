@@ -43,18 +43,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "rest_framework",
-    "djoser",
-    "phonenumber_field",
-    "corsheaders",
-    "users",
-
-    #'django_filters',
-    # "drf_yasg",
-    # "documentation",
-    # "ads",
-    # "redoc",
-
+    'rest_framework',
+    'rest_framework_simplejwt',
+    'djoser',
+    'phonenumber_field',
+    'corsheaders',
+    'django_filters',
+    'users',
+    'ads',
     'drf_spectacular',
 ]
 
