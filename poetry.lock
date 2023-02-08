@@ -467,6 +467,22 @@ social-auth-app-django = ">=4.0.0,<5.0.0"
 test = ["codecov (>=2.0.16,<3.0.0)", "coverage (>=5.3,<6.0)", "djet (>=0.2.2,<0.3.0)", "pytest (>=6.0.2,<7.0.0)", "pytest-cov (>=2.10.1,<3.0.0)", "pytest-django (>=3.10.0,<4.0.0)", "pytest-pythonpath (>=0.7.3,<0.8.0)"]
 
 [[package]]
+name = "drf-nested-routers"
+version = "0.93.4"
+description = "Nested resources for the Django Rest Framework"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+files = [
+    {file = "drf-nested-routers-0.93.4.tar.gz", hash = "sha256:01aa556b8c08608bb74fb34f6ca065a5183f2cda4dc0478192cc17a2581d71b0"},
+    {file = "drf_nested_routers-0.93.4-py2.py3-none-any.whl", hash = "sha256:996b77f3f4dfaf64569e7b8f04e3919945f90f95366838ca5b8bed9dd709d6c5"},
+]
+
+[package.dependencies]
+Django = ">=1.11"
+djangorestframework = ">=3.6.0"
+
+[[package]]
 name = "drf-spectacular"
 version = "0.25.1"
 description = "Sane and flexible OpenAPI 3 schema generation for Django REST framework"
@@ -1244,4 +1260,4 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "87ce5677d7ffa5fa6cd8df86ed587795e23cf84687f8be1a2d98887de9588537"
+content-hash = "b7ba2d03cfaf14f99be8b93d55f6691c3ec89f57ec1dc453559fef820c65f9d2"
