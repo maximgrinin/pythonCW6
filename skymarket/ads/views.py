@@ -3,6 +3,7 @@ from rest_framework import pagination, viewsets
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.decorators import action
+from drf_spectacular.utils import extend_schema, extend_schema_view
 
 from ads.models import Ad, Comment
 from ads.permissions import IsOwner, IsAdmin
@@ -14,9 +15,39 @@ class AdPagination(pagination.PageNumberPagination):
     page_size = 4
 
 
+@extend_schema_view(
+    list=extend_schema(
+        description="Получение списка объявлений",
+        summary="Список объявлений",
+    ),
+    retrieve=extend_schema(
+        description="Получение объявления",
+        summary="Объявление",
+    ),
+    create=extend_schema(
+        description="Создание нового объявления",
+        summary="Создание объявления",
+    ),
+    destroy=extend_schema(
+        description="Удаление объявления",
+        summary="Удаление объявления",
+    ),
+    update=extend_schema(
+        description="Изменение объявления",
+        summary="Изменение объявление",
+    ),
+    partial_update=extend_schema(
+        description="Частичное изменение объявления",
+        summary="Частичное изменение объявления",
+    ),
+    me=extend_schema(
+        description="Список объявлений пользователя",
+        summary="Объявления пользователя",
+    ),
+)
 class AdViewSet(viewsets.ModelViewSet):
     queryset = Ad.objects.all()
-    serializer_class = AdSerializer
+    serializer_class = AdListSerializer
     pagination_class = AdPagination
     permission_classes = (AllowAny, )
     filter_backends = (DjangoFilterBackend,)
@@ -47,14 +78,39 @@ class AdViewSet(viewsets.ModelViewSet):
 
     @action(
         detail=False,
-        methods=[
-            "get",
-        ],
+        methods=["get",
+                 ],
     )
     def me(self, request, *args, **kwargs):
         return super().list(self, request, *args, **kwargs)
 
 
+@extend_schema_view(
+    list=extend_schema(
+        description="Получение списка комментариев",
+        summary="Список комментариев",
+    ),
+    retrieve=extend_schema(
+        description="Получение комментария",
+        summary="Комментарий",
+    ),
+    create=extend_schema(
+        description="Создание нового комментария",
+        summary="Создание комментария",
+    ),
+    destroy=extend_schema(
+        description="Удаление комментария",
+        summary="Удаление комментария",
+    ),
+    update=extend_schema(
+        description="Изменение комментария",
+        summary="Изменение комментария",
+    ),
+    partial_update=extend_schema(
+        description="Частичное изменение комментария",
+        summary="Частичное изменение комментария",
+    ),
+)
 class CommentViewSet(viewsets.ModelViewSet):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer

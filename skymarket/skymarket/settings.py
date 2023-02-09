@@ -170,10 +170,6 @@ DJOSER = {
         'current_user': 'users.serializers.CurrentUserSerializer'
     },
     'LOGIN_FIELD': 'email',
-    # 'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
-    # 'EMAIL': {
-    #      'password_reset': 'users.email.PasswordResetEmail',
-    # }
 }
 
 

@@ -58,7 +58,7 @@ class User(AbstractBaseUser):
     )
 
     is_active = models.BooleanField(
-        verbose_name="Аккаунт активен",
+        verbose_name="Активен",
         help_text="Укажите, активен ли аккаунт"
     )
 

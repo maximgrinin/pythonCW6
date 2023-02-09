@@ -134,3 +134,4 @@ dmypy.json
 ./django_static
 media/*
 ./django_media
+/.node_modules/
